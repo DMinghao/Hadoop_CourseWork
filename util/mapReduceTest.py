@@ -7,6 +7,9 @@ dataFile = ""
 if len(sys.argv) >= 3:
     target = f"../{sys.argv[1]}"
     dataFile = f"{target}/{sys.argv[2]}" 
+    if not os.path.isdir(target) and not os.path.isfile(dataFile): 
+        print("Target Folder or Data File not found")
+        sys.exit(-1)
 
 if target == "": 
     while True: 
