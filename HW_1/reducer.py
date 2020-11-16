@@ -18,10 +18,7 @@ for line in sys.stdin:
     except ValueError:
         continue
 
-    try:
-        combinationCount[key] = combinationCount[key]+value
-    except:
-        combinationCount[key] = value
+    combinationCount[key] = key in combinationCount and combinationCount[key] + value or value
  
 # write the tuples to stdout
 # Note: they are unsorted
