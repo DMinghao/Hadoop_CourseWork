@@ -3,7 +3,7 @@ import sys
  
 # maps combinations to their counts
 combinationCount = {}
-support = 2
+SUPPORT = 2
  
 # input comes from STDIN
 for line in sys.stdin:
@@ -18,10 +18,11 @@ for line in sys.stdin:
     except ValueError:
         continue
 
+    #short hand operation to assign or add value 
     combinationCount[key] = key in combinationCount and combinationCount[key] + value or value
  
 # write the tuples to stdout
 # Note: they are unsorted
 for key in combinationCount.keys():
-    if combinationCount[key] >= support: 
-        print('%s\t%s'% ( key, combinationCount[key] ))
+    if combinationCount[key] >= SUPPORT: 
+        print("%s\t%s"%(key, combinationCount[key]))

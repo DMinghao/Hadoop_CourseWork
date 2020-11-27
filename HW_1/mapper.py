@@ -10,11 +10,11 @@ for transaction in sys.stdin:
     transaction = transaction.strip()
 
     #--- split the transaction into numbers ---
-    numbers = transaction.split()
+    numbers = map(lambda x : int(x), transaction.split())
 
     #--- get all possible combinations of transaction ---
     ans = combinations(numbers, 2)
 
     #--- output tuples ((item a, item b), 1) in tab-delimited format---
     for a in ans: 
-        print('%s\t%s' % (a, 1))
+        print("%s\t%s"%(a, 1))
